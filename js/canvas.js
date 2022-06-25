@@ -96,3 +96,13 @@ eraser.addEventListener("click",(e)=>{
         tool.lineWidth = penWidth;
     }
 })
+
+download.addEventListener("click",(e)=>{
+    let url  = canvas.toDataURL();  // converts pixel into url
+
+    // setting url
+    let a = document.createElement("a");
+    a.href  = url;
+    a.download = "board.jpg";
+    a.click();
+})
