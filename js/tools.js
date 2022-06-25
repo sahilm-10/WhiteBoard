@@ -113,7 +113,7 @@ sticky.addEventListener("click" , (e)=>{
             <div class="remove"></div>
         </div>
         <div class="notes-cont">
-            <textarea ></textarea>
+            <textarea spellchecker = "false"></textarea>
         </div>
     </div>
     `;
