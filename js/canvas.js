@@ -11,6 +11,10 @@ let penWidth = pencilWidthEle.val;
 let eraserWidth = eraserWidthEle.val;
 let mousedown = false;
 let download = document.querySelector(".download");
+let undo = document.querySelector(".undo");
+let redo = document.querySelector(".redo");
+let undoRedoTracker = [];
+let track = 0;
 
 // Api defining 
 let tool = canvas.getContext("2d");  // for drawing path
@@ -56,6 +60,9 @@ canvas.addEventListener("mousemove",(e)=>{
 
 canvas.addEventListener("mouseup",(e)=>{
     mousedown = false;
+    let url = canvas.toDataURL();  //converting canvas into url
+    undoRedoTracker.push(url); // pushing url into array
+    track = undoRedoTracker.length - 1; //updating the track
 });
 
 function beginPath(strokeObj){
@@ -106,3 +113,43 @@ download.addEventListener("click",(e)=>{
     a.download = "board.jpg";
     a.click();
 })
+
+
+// undo actions -- hoga 
+undo.addEventListener("click",(e)=>{
+    if(track > 0){
+        track--;
+    }
+    let trackObj = {
+        trackValue : track,
+        undoRedoTracker 
+    }
+    undoRedoCanvas(trackObj);
+
+})
+
+// redo actions ++ hoga 
+redo.addEventListener("click",(e)=>{
+    if(track < undoRedoTracker.length -1){
+        track++;
+    }
+    // performing action
+    let trackObj = {
+        trackValue : track,
+        undoRedoTracker 
+    }
+    undoRedoCanvas(trackObj);
+})
+
+function undoRedoCanvas(trackObj){
+    track = trackObj.trackValue;
+    undoRedoTracker = trackObj.undoRedoTracker;
+
+    let url =  undoRedoTracker[track];
+    let img = new Image();
+    img.src = url;
+    img.onload = (e) =>{
+        tool.drawImage(img,0,0,canvas.width,canvas.height);
+    }
+}
+

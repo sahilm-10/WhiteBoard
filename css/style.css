@@ -19,6 +19,9 @@ body{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 50%;
 }
+.options-container:hover{
+    cursor: pointer;
+}
 
 
 .tools-container{
@@ -33,6 +36,9 @@ body{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 
+}
+.tools-container:hover{
+    cursor: pointer;
 }
 .tools-container > *{
     display: block;
@@ -145,3 +151,4 @@ textarea{
     resize: none;
     outline: none;
 }
+
