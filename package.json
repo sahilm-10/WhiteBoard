@@ -1,0 +1,27 @@
+{
+  "name": "whiteboard-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "JSCPP": "^2.0.9",
+    "express": "^4.18.1",
+    "socket.io": "^4.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sahilm-10/WhiteBoard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sahilm-10/WhiteBoard/issues"
+  },
+  "homepage": "https://github.com/sahilm-10/WhiteBoard#readme"
+}

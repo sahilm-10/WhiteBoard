@@ -1,0 +1,16 @@
+Using Socket io for acheiving realtime dataflow
+
+Dependencies -
+
+need to make server  -> using express 
+1. npm init 
+2. for connecting with frontend 
+ -> paste the cdn from socketio cdn 
+3. Initlize server and listen 
+4. Socket cdn frontend and response in backend
+********connection established*********
+
+
+Installing nodemon if app crashes it will reinstall.
+
+********** Data Transfer **********
