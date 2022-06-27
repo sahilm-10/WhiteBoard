@@ -5,7 +5,7 @@ const app = express(); // Initialize and server ready
 
 app.use(express.static("public"));  // public -> static file display karega on localhost:port
 // Listening to the server
-let port = 3000;
+let port = process.env.PORT || 3000;
 let server = app.listen(port,()=>{
     console.log("Listening to port:" + port);
 });
